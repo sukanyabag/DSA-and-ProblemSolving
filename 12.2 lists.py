@@ -1,5 +1,4 @@
-#   Created by Elshad Karimov on 10/04/2020.
-#   Copyright © 2020 AppMillers. All rights reserved.
+
 
 # Accessing/Traversing the list
 
