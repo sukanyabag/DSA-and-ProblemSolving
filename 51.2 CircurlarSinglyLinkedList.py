@@ -1,5 +1,3 @@
-#   Created by Elshad Karimov on 01/05/2020.
-#   Copyright © 2020 AppMillers. All rights reserved.
 
 class Node:
     def __init__(self, value=None):
