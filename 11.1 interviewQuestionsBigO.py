@@ -1,5 +1,3 @@
-#  Created by Elshad Karimov on 3/26/20.
-#  Copyright © 2020 Elshad Karimov. All rights reserved.
 
 ################ Interview Questions #############
 #Question1
