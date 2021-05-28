@@ -1,0 +1,8 @@
+Recursion
+BigO
+Array
+Lists
+LinkedLists
+Stack
+Queue
+Divide and Conquer
