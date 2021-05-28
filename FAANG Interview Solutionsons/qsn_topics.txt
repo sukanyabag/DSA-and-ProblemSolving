@@ -1,8 +1,0 @@
-Recursion
-BigO
-Array
-List
-Linkedlist
-Stack
-Queue
-Divide & Conquer
