@@ -28,9 +28,6 @@ def printUnorderedPairs(array):
             print(array[i] + "," + array[j])
 
 
-
-
-
 #Question4
 def printUnorderedPairs(arrayA, arrayB):
     for i in range(len(arrayA)):
