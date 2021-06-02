@@ -110,9 +110,3 @@ singlyLinkedList.insertSLL(0, 4)
 # print([node.value for node in singlyLinkedList]) 
 # singlyLinkedList.deleteEntireSLL()
 # print([node.value for node in singlyLinkedList]) 
-
-
-
-
-
-
