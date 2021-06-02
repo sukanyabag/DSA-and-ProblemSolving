@@ -115,5 +115,3 @@ singlyLinkedList.insertSLL(4,1)
 print([node.value for node in singlyLinkedList]) 
 singlyLinkedList.insertSLL(5,3)
 print([node.value for node in singlyLinkedList]) 
-
-
