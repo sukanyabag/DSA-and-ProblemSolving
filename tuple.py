@@ -1,5 +1,3 @@
-
-
 newTuple = ('a', 'b', 'c', 'd', 'e')
 newTuple1 = tuple('abcde')
 
@@ -42,8 +40,3 @@ print(2 in myTuple1)
 
 myTuple1.count(2)
 myTuple1.index(2)
-
-
-
-
-
