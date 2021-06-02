@@ -1,5 +1,3 @@
-
-
 # Accessing/Traversing the list
 
 shoppingList = ['Milk', 'Cheese', 'Butter']
