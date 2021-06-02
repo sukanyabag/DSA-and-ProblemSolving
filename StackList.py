@@ -46,13 +46,9 @@ class Stack:
     def delete(self):
         self.list = None
 
-
-
 ''' Note - There is another additional method in stack called isFull() but we didn't create it here as we
 are not using any size-limit, so we cannot check if the stack is full.
 '''
-
-
 #check methods. Create an object of stack class first 
 
 customStack = Stack()
@@ -66,5 +62,3 @@ customStack.push(3)
 #print(customStack)
 print(customStack.Peek())
 print(customStack)
-
-
