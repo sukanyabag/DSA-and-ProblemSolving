@@ -56,9 +56,7 @@ class Stack:
 
     def delete(self):
         self.LinkedList.head = None
-
-
-
+        
 customStack = Stack()
 #print(customStack.isEmpty())
 customStack.push(1)
