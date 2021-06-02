@@ -81,10 +81,6 @@ print(f(3))
 
 
 
-
-
-
-
 ######  Quiz Questions ####### 
 
 
