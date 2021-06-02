@@ -27,9 +27,6 @@ print(searchDict(myDict, 27))
 
 myDict.pop('name')
 
-
-
-
 # sorted method
 myDict = {'eooooa': 1, 'aas': 2, 'udd': 3, 'sseo': 4, 'werwi': 5}
 
