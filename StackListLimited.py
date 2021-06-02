@@ -47,9 +47,6 @@ class Stack:
     def delete(self):
         self.list = None
 
-
-
-
 customStack = Stack(5)
 print(customStack.isEmpty())
 print(customStack.isFull())
