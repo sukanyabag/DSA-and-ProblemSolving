@@ -38,15 +38,6 @@ class Queue:
 
         self.items = None
 
-
-    
-
-
-
-
-
-
-
 customQueue = Queue()
 #print(customQueue.isEmpty())
 customQueue.enqueue(1)
