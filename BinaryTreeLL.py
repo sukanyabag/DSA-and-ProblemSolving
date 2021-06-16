@@ -1,6 +1,7 @@
 
 '''
-Q- Implement a binary tree using Linked List data structure and oop.
+Q- Implement a binary tree using Linked List data structure and perform all possible operations.
+Use object oriented design to implement the logics taught.
 '''
 class TreeNode:
     def __init__(self,data):
@@ -58,6 +59,8 @@ For level order traversal, we need to take the help of queue data structure
 (since queue works as fifo), with linked list for implmenting l-o-t in binary tree.
 For simplicity I will import the QueueLinkedList module which has already been coded by me earlier 
 while learning queue ds.
+
+Trick - All other traversals in binary tree are performed via stack, except for level-order traversal which requires queue data structure.
 '''
 from typing import Generator
 import QueueLinkedList as q
@@ -196,19 +199,3 @@ def deleteBT(rootNode): #time is O(1) and space is O(1)
     rootNode.leftChild =  None
     rootNode.rightChild = None
     return "The Binary Tree has been succesfully deleted."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
