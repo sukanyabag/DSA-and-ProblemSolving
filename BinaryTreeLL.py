@@ -9,9 +9,9 @@ class TreeNode:
         self.leftChild = None
         self.rightChild = None
 
-#creating tree
+#creating tree - time and space is O(1)
 
-newBT = TreeNode("Drinks") #time and space is O(1)
+newBT = TreeNode("Drinks") 
 leftChild = TreeNode("Hot")
 tea = TreeNode('Tea')
 coffee= TreeNode('Coffee')
@@ -62,7 +62,7 @@ while learning queue ds.
 
 Trick - All other traversals in binary tree are performed via stack, except for level-order traversal which requires queue data structure.
 '''
-from typing import Generator
+
 import QueueLinkedList as q
 
 def levelOrderTraversal(rootNode): #time and space is O(N)
