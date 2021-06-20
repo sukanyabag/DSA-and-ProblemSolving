@@ -1,10 +1,10 @@
-class BinaryTree:
+class BinaryTree: # O(1) time & O(N) space.
     def __init__(self, size):
         self.customList = size * [None]
         self.maxsize = size
         self.lastUsedIdx = 0
 
-    def insertNode(self, value): 
+    def insertNode(self, value): # O(1) time & O(1) space.
         if self.lastUsedIdx + 1 == self.maxsize:
             return "The Binary Tree is full."
         self.customList[self.lastUsedIdx + 1] = value
@@ -17,6 +17,8 @@ class BinaryTree:
                 return "Node found!"
             else:
                 return "Node not found!"
+     
+    '''TRAVERSAL (ALL KINDS) -> TIME - O(N),SPACE- O(1)'''
 
     def preOrderTraversal(self, idx): # O(N) time & O(N) space.
         if idx > self.lastUsedIdx:
@@ -56,7 +58,7 @@ class BinaryTree:
                 self.lastUsedIdx -= 1
                 return "The node has been successfully deleted."
     
-    def deleteBT(self): # O(N) time & O(N) space.
+    def deleteBT(self): # O(1) time & O(1) space.
         self.customList = None
         return "The binary tree has been deleted!"
 
