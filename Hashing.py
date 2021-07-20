@@ -1,13 +1,11 @@
-#   Created by Elshad Karimov 
-#   Copyright © 2021 AppMillers. All rights reserved.
-
+#hash function for integer data
 def mod(number, cellNumber):
     return number % cellNumber
 
 
 # print(mod(400, 24))
 
-
+#hash function for string data
 def modASCII(string, cellNumber):
     total = 0
     for i in string:
