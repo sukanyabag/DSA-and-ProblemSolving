@@ -1,7 +1,7 @@
 # helper function for partitioning array
 
 #takes last element as pivot and places it in correct position in sorted array
-# places all smallr elements than pivot to the left of it and all greater elements to right 
+# places all smaller elements than pivot to the left of it and all greater elements to right 
 
 def partition(customList, low, high):
     i = low - 1 #to be used inside loop for swapping vals
