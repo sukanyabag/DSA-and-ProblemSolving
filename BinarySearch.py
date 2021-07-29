@@ -1,5 +1,5 @@
 import math
-def binarySearch(arr, val):
+def binarySearch(arr, val): # time - O(1,best), O(logN, avg/worst) 
     left_ptr = 0 #L
     right_ptr = len(arr) - 1 #R
     mid_ptr = math.floor((left_ptr+right_ptr) / 2) #M
