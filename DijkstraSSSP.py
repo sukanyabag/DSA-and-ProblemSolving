@@ -20,7 +20,7 @@ class Graph:
         self.distances[(fromNode, toNode)] = distance
 
 #define Dijkstra's algorithm
-def dijkstra(graph, initial_node):
+def dijkstra(graph, initial_node): #time - O(V^2), space = O(E)
     #mark vertices as visited
     visited = {initial_node : 0}
     path = defaultdict(list)
