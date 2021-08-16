@@ -27,12 +27,12 @@ class Solution:
         if n <= 2:
             return n
         
-        prev1 = 1
-        prev2 = 2
+        p1 = 1
+        p2 = 2
         
         for i in range(2,n):
-            current = prev1 + prev2
-            prev1 = prev2
-            prev2 = current
-        return current
+            c = p1 + p2
+            p1 = p2
+            p2 = c
+        return c
         
