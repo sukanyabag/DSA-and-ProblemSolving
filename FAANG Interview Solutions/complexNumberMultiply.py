@@ -13,7 +13,6 @@ Explanation: (1 + i) * (1 + i) = 1 + i2 + 2 * i = 2i, and you need convert it to
 Constraints:
 num1 and num2 are valid complex numbers.
 '''
-
 class Solution:
     def complexNumberMultiply(self, num1: str, num2: str) -> str:
         a,b = num1.split("+")
