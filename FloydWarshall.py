@@ -9,7 +9,7 @@ def print_sol(nV, distance):
                 print(distance[i][j], end = " ")
         print(" ")
 
-def floydWarshall(nV, G):
+def floydWarshall(nV, G): # time - O(V^3), space - O(V^2)
     distance = G
     for k in range(nV):
         for i in range(nV):
