@@ -1,0 +1,14 @@
+'''
+dynamic prog properties-
+1. optimal substructure - 
+if any problem's overall sol can be constructed from the optimal solutions 
+of its subproblem, then it has optimal substructure.
+
+ex - fibonacci series
+
+2. overlapping subproblem-
+instead of doing the same subproblem multiple times we just use the
+solutions of the prev subproblem to do the later one and so on.
+we cannot do this for divide and conquer
+
+'''
