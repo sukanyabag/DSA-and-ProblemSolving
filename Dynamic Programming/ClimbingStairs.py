@@ -11,6 +11,28 @@ Explanation: There are two ways to climb to the top.
 Constraints:
 1 <= n <= 45
 '''
+class Solution:
+    def climbStairs(self, n: int) -> int:    
+	a,b = 1,1
+	for _ in range(n):
+		a,b = b,a+b
+	return a
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+	dp = [1,2]+[0]*(n-2)
+	for i in range(2, n):
+		dp[i] = dp[i-1]+dp[i-2]
+	return dp[n-1]
+
+#memoization
+def climbStairs(self, n: int) -> int:        
+	def dfs(n):
+		if n not in memo: memo[n] = dfs(n-1)+dfs(n-2)
+		return memo[n]   
+
+	memo = {1:1, 2:2}
+	return dfs(n)
 
 class Solution:
     def climbStairs(self, n: int) -> int:
