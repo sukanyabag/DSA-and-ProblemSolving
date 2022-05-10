@@ -46,7 +46,7 @@ public class App{
 
 
 PYTHON 3X
-def reverseList(arr, beg, des):
+def reverseArray(arr, beg, des):
     while beg < des:
         arr[beg], arr[des] = arr[des], arr[beg]
         beg += 1
