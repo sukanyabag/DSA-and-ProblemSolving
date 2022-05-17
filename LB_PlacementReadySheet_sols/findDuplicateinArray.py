@@ -1,0 +1,43 @@
+'''
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+There is only one repeated number in nums, return this repeated number.
+You must solve the problem without modifying the array nums and uses only constant extra space.
+
+Example 1:
+Input: nums = [1,3,4,2,2]
+Output: 2
+Example 2:
+
+Input: nums = [3,1,3,4,2]
+Output: 3
+Constraints:
+
+1 <= n <= 105
+nums.length == n + 1
+1 <= nums[i] <= n
+All the integers in nums appear only once except for precisely one integer which appears two or more times.
+'''
+#python3
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        uniq = set()
+        i = 0
+        while i<len(nums):
+            if nums[i] in uniq:
+                return nums[i]
+            uniq.add(nums[i])
+            i += 1
+            
+#java
+class Solution {
+    public int findDuplicate(int[] nums) {
+        Set<Integer> uniq = new HashSet<Integer>();
+        for (int num : nums) {
+            if (uniq.contains(num))
+                return num;
+            uniq.add(num);
+        }
+        return -1;
+    }
+}
+
