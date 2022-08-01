@@ -88,4 +88,11 @@ m+n-2 = 3 and n-1 = 2-1= 1, m-1 = 3-1 = 2
 
 So, 3C1 = 3 and 3C2 = 3x2x1/2x1 = 3. Either way answer is 3!
 
+DRY RUN
+res = 1
+N = (m+n-2)
+r = m-1
+res = res * ((m+n-2)-(m-1)+i) / i = (3 - 2 + 1)/1 = 2
+2*(3-2+2)/2= 6/2 = 3 (ANSWER)
+
 */
