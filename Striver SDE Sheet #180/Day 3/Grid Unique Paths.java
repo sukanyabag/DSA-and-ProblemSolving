@@ -68,3 +68,24 @@ class Solution {
         return (int) res;
     }
 }
+
+/* 
+If we observe examples, there is a similarity if paths from start to end.
+Each time we are taking exactly m+n-2 steps to reach end.
+Input: m = 3, n = 2 --> m+n-2 = 3+2-2 = 3
+And Output: 3. So we can say that there are excatly (n-1) RIGHT and (m-1) DOWN 
+directions.
+So, (RIGHT + DOWN) = (n-1) + (m-1) = m + n - 2 steps to reach end.
+
+Therefore, calculating number of unique paths will boil down to-
+ 
+Formula = m+n-2         or m+n-2
+               C                C
+                n-1              m-1
+                
+Hence, for the given example m = 3, n = 2 - 
+m+n-2 = 3 and n-1 = 2-1= 1, m-1 = 3-1 = 2
+
+So, 3C1 = 3 and 3C2 = 3x2x1/2x1 = 3. Either way answer is 3!
+
+*/
