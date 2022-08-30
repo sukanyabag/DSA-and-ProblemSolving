@@ -73,7 +73,7 @@ class Solution {
         so we can see that from is = 0 to getRootIdx - 1 = 2, we have our left subtree
         and, that in postorder is exactly from ps = 0 to ps(0) + numsAtLeft(3) - 1 = 2 (0 -> 2)
         
-        and from getRootIdx + 1 = 3 + 1 = 4 to ie = 5, we have our roght subtree. and that
+        and from getRootIdx + 1 = 3 + 1 = 4 to ie = 5, we have our right subtree. and that
         in postorder array is exactly from ps(0) + numsAtLeft(3) = 3 to pe-1 = 5 - 1 = 4
         */
         root.left = helper(inorder,is,getRootIdx-1,postorder, ps, ps + numsAtLeft - 1, mp);
