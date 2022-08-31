@@ -41,3 +41,137 @@ for(int i = n-1, i >= 0, i--)
  			len = max(len, 1+ next[i+1])
 
 return curr[pi+1] = len;
+
+
+-------------------------LCS------------------------------------------------------
+LCS - RECURSION
+f(i1,i2)
+	//base
+	if(i1<0 || i2<0)
+		return 0
+
+	//match
+	if(sa[i1] == sb[i2])
+		return 1 + f(i1-1,i2-1)
+
+	//not match
+	else
+		return 0+ max(f(i1-1,i2), f(i1,i2-1))
+
+//memo
+f(s1,s2,i1,i2.int[][]dp)
+	if(i1<0 or i2<0)
+		return 0
+	//visited subproblem
+	if(dp[i1][i2] != -1)
+		return dp[i1][i2]
+	
+	//match
+	if(s1.charAt(i1) == s2.charAt(i2))
+		return dp[i1][i2] = 1 + f(s1,s2,i1-1,i2-1,dp)
+
+	else
+		//not match
+		return dp[i1][i2] = 0 + max(f(s1,s2,i1-1,i2,dp),f(s1,s2,i1,i2-1,dp));
+
+lcs(s1,s2)
+	int n = len(s1)
+	int m = len(s2)
+	int[][] dp = new int[n][m]
+	for(int rows[]: dp)
+		Arrays.fill(rows,-1);
+	return f(s1,s2,n-1,m-1,dp);
+
+//tabulation - eliminate the auxx stack space by using nested for loops and discarding the 
+recursion tree
+//tab -> bottom up
+//base case will be altered 
+// recurrence will be same but instead in for loops 
+
+a|e
+0 0
+
+i1-1 -> 0-1 -> -1-> recursion is over 
+recursive code ->       -1, 0, 1, 2,.....,n
+tab will co-ord shift -> 0. 1, 2, 3......,n+1
+
+so now to alter base case-> simply do i1==0 or i2==0 then return 0
+ie. dp[i1][0] = 0
+ie. dp[0][i2] = 0
+
+//tab code
+lcs(s1,s2)
+	int n = len(s1)
+	int m = len(s2)
+	int[][] dp = new int[n+1][m+1]
+	for(int rows[]: dp)
+		Arrays.fill(rows,-1);
+
+	//base case as discussed
+	for(int i=0, i<=n;i++)
+		dp[i][0] = 0
+	for(int i=0; i<=m; i++)
+		dp[0][i] = 0
+
+	//main logic
+ 	//since 0 is covered in base case start from 1
+	for(int i1=1; i1<=n; i1++)
+		for(int i2=1; i2<=m; i++)
+			//match
+			if(s1.charAt(i1-1) == s2.charAt(i2-1))
+				dp[i1][i2] = 1 + dp[i1-1][i2-1];
+
+			//not match
+			else
+				dp[i1][i2] = 0 + max(dp[i1-1][i2],dp[i1][i2-1]);
+
+	return dp[n][m]
+
+
+//space opt
+dp[i1-1] to prev
+dp[i1] to curr
+
+lcs(s1,s2)
+	int n = len(s1)
+	int m = len(s2)
+	int prev[] = new int[m+1]
+	int curr[] = new int[m+1]
+
+	//main logic
+ 	//since 0 is covered in base case start from 1
+	for(int i1=1; i1<=n; i1++)
+		for(int i2=1; i2<=m; i++)
+			//match
+			if(s1.charAt(i1-1) == s2.charAt(i2-1))
+				curr[i2] = 1 + prev[i2-1];
+
+			//not match
+			else
+				curr[i2] = 0 + max(prev[i2],curr[i2-1]);
+		//since we need to update prev to curr for next iterations
+		prev = (int[])(curr.clone());
+	return prev[m] or curr[m]
+	
+
+
+
+
+			
+	
+
+
+
+ 
+
+
+
+
+		
+
+
+	
+
+
+
+
