@@ -1,0 +1,43 @@
+//memo
+if(i == n) ret 0
+
+check vis
+if dp[i][pi+1] != -1 ret dp[i][pi+1]
+//not take
+int len  = 0 + f(arr,n,i+1,pi,dp)
+
+if(pi == -1 || arr[i]>arr[pi])
+	//take
+ 	len = max(len, 1+ f(arr,n,i+1,i,dp))
+
+return dp[i][pi+1] = len;
+
+//tab
+//do not need base case
+int[][] dp = new int[n+1][n+1]
+
+for(int i = n-1, i >= 0, i--)
+	for(int pi = i-1, pi >= -1, pi--)
+		int len  = 0 + dp[i+1][pi+1]
+
+		if(pi == -1 || arr[i]>arr[pi])
+			//take
+ 			len = max(len, 1+ dp[i+1][i+1])
+
+return dp[i][pi+1] = len;
+
+//space opt
+//at all the i make it current, at all i+1 make it next
+
+int[] curr = new int[n+1]
+int[] next = new int[n+1]
+
+for(int i = n-1, i >= 0, i--)
+	for(int pi = i-1, pi >= -1, pi--)
+		int len  = 0 + next[pi+1]
+
+		if(pi == -1 || arr[i]>arr[pi])
+			//take
+ 			len = max(len, 1+ next[i+1])
+
+return curr[pi+1] = len;
