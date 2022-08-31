@@ -153,13 +153,101 @@ lcs(s1,s2)
 		prev = (int[])(curr.clone());
 	return prev[m] or curr[m]
 	
+----------------------------------------EDIT DISTANCE-----------------------------------------
+
+	
 
 
 
 
 			
 	
+recr
+def md(self,w1,w2):
+	if not w1 and not w2:
+		return 0
+	if not w1:
+		return len(w2)
+	if not w2:
+		return len(w1)
+	if w1[0] == w2[0]:
+		return self.md(w1[1:],w2[1:])
 
+	insert = 1 + self.md(w1, w2[1:])
+	delete = 1 + self.md(w1[1:],w2)
+	replace = 1 + self.md(w1[1:]+w2[1:])
+
+	return min(insert,delete,replace)
+
+//convert thus recr into memo
+def md(self,w1,w2,i,j,memo):
+	if i == len(w1) and j == len(w2):
+		return 0
+	if i == len(w1):
+		return len(w2)-j
+	if j == len(w2):
+		return len(w1) - i
+
+	if i,j not in memo:
+		if w1[i] == w2[j]:
+			ans = self.md(w1,w2,i+1,j+1,memo)
+		else:
+			insert = 1 + self.md(w1,w2,ij+1,memo)
+			delete = 1 + self.md(w1,w2,i+1,j,memo)
+			replace = 1 + self.md(w1,w2,i+1,j+1,memo)
+			ans = min(insert,delete,replace)
+		memo[(i,j)] = ans
+	return memo[(i,j)]
+
+//tabulation
+def md(self,w1,w2):
+	m = len(w1)
+	n = len(w2)
+	tbl = [[0]*(n+1) for _ in range(m+1)]
+
+	for i in range(m+1):
+		tbl[i][0] = i
+	for j in range(n+1):
+		tbl[0][j] = j
+
+	for i in range(1,m+1):
+		for j in range(1,n+1):
+			if w1[i-1] == w2[j-1]:
+				tbl[i][j] = tbl[i-1][j-1]
+			else:
+				tbl[i][j] = 1 + min(tbl[i][j-1], tbl[i-1][j], tbl[i-1][j-1])
+	return tbl[-1][-1]
+
+
+------------------------------------------------------MAX SUM INCR SUBSEQ [MSIS]-----------------------------------------------------------
+//tab
+//bottm up
+int f(int[] arr, int n)
+	//init 
+	int i;
+	int j;
+	int max = 0;
+	
+	//init table
+	int[] msis = new int[n];
+	
+	//fill msis with arr[i]
+	for(int i = 0; i < n; i++)
+		msis[i] = arr[i];
+		
+	//calc max sum values in bottom up fashion
+	for(int i = 1; i < n ; i++)
+		for(int j = 0; j< i; j++)
+			if(arr[i] > arr[j] && msis[i] < msis[j] + arr[i])
+				msis[i] = msis[j] + arr[i]
+				
+	//pick max of all msis vals
+	for(int i = 0; i < n; i++)
+		if(msis[i] > max)
+			max = msis[i];
+			
+	return max;
+			
 
 
  
