@@ -247,6 +247,105 @@ int f(int[] arr, int n)
 			max = msis[i];
 			
 	return max;
+	
+---------------------------------------------MINIMUM PATH SUM-----------------------------------------------
+min-path sum
+
+//recr
+f(i,j)
+	//base case
+	if(i==0 && j==0) return matx[0][0]
+
+	//idx out of bnd
+	if(i < 0 || j < 0) return INT_MAX(1e9)
+
+	//main logic - directions -> UP , LEFT
+	up = matx[i][j] + f(i-1,j)
+
+	left = matx[i][j] + f(i, j-1)
+
+	return min(up,left)
+
+//memo
+//create a dp array of size nm
+//check if visited subproblem
+//if visited return
+//if not visited find answer and update value in dp
+
+f(i, j, int[][] matx, int[][]dp)
+	//base case
+	if(i == 0 && j==0) return matx[0][0]
+
+	//edge case - out of boundary
+	if(i<0 || j<0)
+		return (int) Math.pow(10,9);
+
+	//check if problem is visited the  return val
+	if(dp[i][j] != -1) return dp[i][j]
+
+	//not visited -> go up and left
+	int up = matx[i][j] + f(i-1,j,matx,dp);
+	int left = matx[i][j] + f(i,j-1,matx,dp);
+
+	return dp[i][j] = Math.min(up,left);
+
+minpth(int n, int m, int[][]mtx)
+	int[][] dp = new int[n][m];
+	for(int row[]: dp)
+		Arrays.fill(row,-1)
+	return f(n-1,m-1,mtx,dp);
+
+tc - o(mn)
+sc - o(m-1)+o(n-1)+ o(nm)DP
+
+//convert memo to tabln for eliminating ass 
+minpth(n,m,int[][]mtx)
+	int dp[][] = new int[n][m]
+	
+	for(int i=0; i<n; i++)
+		for(int j=0; j<m; j++)
+			if(i==0 && j==0) -> dp[i][j] = mtx[i][j]
+			else
+				int up = mtx[i][j]
+				if(i>0) up += dp[i-1][j]
+				else up+= (int)Math.pow(10,9)
+
+				int left = mtx[i][j];
+				if(j>0) left+= dp[i][j-1]
+				else left += (int) Math.pow(10,9)
+
+				dp[i][j] = Math.min(up,left)
+
+
+
+	return dp[n-1][m-1]
+
+//space opt
+//place prev ipo dp[i-1] and curr ipo dp[i]
+minpth(int n, int m, int[][] mtx)
+	int prev[] = new int[n]
+	for(int i=0; i<n; i++)
+		int curr[] = new int[m];
+		for(int j=0; j < m; j++)
+			if(i==0 && j==0) curr[j] = mtx[i][j];
+
+			else
+				int up = mtx[i][j]
+				if(i>0) up += prev[j]
+				else up += (int) Math.pow(10,9)
+
+				int left = mtx[i][j]
+				if(j>0) left += curr[j-1];
+				else left += (int) Math.pow(10,9);
+
+
+				curr[j] = Math.min(up,left);
+
+         	rev  = curr;
+
+	return prev[m-1]
+
+	
 			
 
 
