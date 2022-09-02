@@ -13,23 +13,33 @@ Example 1:
 
 Input: n = 20 Output: 6 Explanation: The confusing numbers are [6,9,10,16,18,19]. 6 converts to 9. 9 converts to 6. 
 10 converts to 01 which is just 1. 16 converts to 91. 18 converts to 81. 19 converts to 61.
-orig = 69 
+orig = 19 
 
-rot = 96
+rot = 61
 
-if we add 1 to its right
-691 -> 69 * 10 + 1
+if we add 1 to ori's right
+191 -> 19 * 10 + 1
 
-newrot = 196
+newrot = 161
 
-rot is 196 -> 10^2 + 96
+so newrot is 161 -> 10^2 + rot = 100 + 61 = 161
 
-orig(69)
-rot(96)
+ori = 81
+rot = 18
+if we add 1 to ori's right
+811 -> 81 * 10 + 1
+
+new rot = 118
+
+new rot = 10^2 + rot = 100 + 18 = 118
+
+
+orig(19)
+rot(61)
 n(2)
-if we append a dig x(1) to the right of orig value, the new 
-number becomes orig*10+x = 69*10 + 1= 691, and the newrot(196)
-is exactly 10^(n*x) + rot = 10**(2*1) + 96 = 196
+if we append a dig x(1) to the right of orig value(191), the new 
+number becomes orig*10+x = 19 * 10 + 1= 191, and the newrot(161)
+is exactly 10^(n*x) + rot = 10**(2*1) + 61 = 161
 
 '''
 def confusingNO(self, N:int) -> int:
