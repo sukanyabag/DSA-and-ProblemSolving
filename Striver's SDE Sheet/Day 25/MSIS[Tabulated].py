@@ -16,13 +16,12 @@ class Solution:
 	def maxSumIS(self, arr, n):
 		# code here
 		dp = [0] * n
-		
-		#init msis for all indices
-		for i in range(n):
-		    dp[i] = arr[i]
-		    
+	
 		#compute msis in bottom up manner aka tabulation
-		for i in range(1,n):
+		for i in range(n):
+		    #init msis for all indices
+		    dp[i] = arr[i]
+		    #msis subproblems
 		    for j in range(i):
 		        if(arr[i] > arr[j]):
 		            dp[i] = max(dp[i], dp[j] + arr[i])
