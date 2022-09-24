@@ -10,11 +10,12 @@ increasing sequence is obtained from
 {1, 2, 3, 100}
 '''
 #just tweaked LIS code
+#User function Template for python3
+#TABULATED CODE
 class Solution:
 	def maxSumIS(self, arr, n):
 		# code here
-		maxsum = 0
-		dp = [0 for x in range(n)]
+		dp = [0] * n
 		
 		#init msis for all indices
 		for i in range(n):
@@ -23,13 +24,8 @@ class Solution:
 		#compute msis in bottom up manner aka tabulation
 		for i in range(1,n):
 		    for j in range(i):
-		        if(arr[i] > arr[j] and dp[i] < dp[j] + arr[i]):
-		            dp[i] = dp[j] + arr[i]
+		        if(arr[i] > arr[j]):
+		            dp[i] = max(dp[i], dp[j] + arr[i])
 		            
-		 #traverse dp array and update maxsum, return maxsum
-		for i in range(n):
-		     if maxsum < dp[i]:
-		         maxsum = dp[i]
-		         
-		         
-		return maxsum
+		return max(dp)
+		       
