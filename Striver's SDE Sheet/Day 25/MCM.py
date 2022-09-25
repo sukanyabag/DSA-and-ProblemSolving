@@ -8,6 +8,7 @@ where the ith matrix has the dimensions (arr[i-1] x arr[i]).
 Expected Time Complexity: O(N3)
 Expected Auxiliary Space: O(N2)
 
+Memoized Solution
 '''
 class Solution:
     def matrixMultiplication(self, N, arr):
