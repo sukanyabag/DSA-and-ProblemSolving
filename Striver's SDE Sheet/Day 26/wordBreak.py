@@ -23,16 +23,27 @@ SPACE COMPLEXITY - O(N)
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        dp = [False] * (len(s) + 1)
-        dp[len(s)] = True
+        dp  = [False] * (len(s) + 1)
         
-        #bottom up
-        for i in range(len(s)-1,-1,-1):
-            for w in wordDict:
-                if(i + len(w) <= len(s) and s[i:i+len(w)] == w):
-                    dp[i] = dp[i+len(w)]
+        eos = len(s)
+        #basecase - if we reached end of string(eos) wkt we found a match, so ret True
+        dp[eos] = True
+        
+        '''
+        TC - O(N^2 * M) 
+        (N(LEN(s))*M(LEN(dict)) * N(CHECKING IF WORD IN DICT LIES IN STR)
+        SC - O(N)
+        '''
+        #bottom up (tabulation) 
+        for chidx in range(len(s)-1,-1,-1):
+            for word in wordDict:
+                if(chidx + len(word)) <= len(s) and s[chidx : chidx + len(word)] == word:
+                    dp[chidx] = dp[chidx + len(word)]
                     
-                if dp[i]:
-                    break
-                    
+                    #if true, break, no need to check further
+                    if dp[chidx]:
+                        break
+                        
         return dp[0]
+        
+        
