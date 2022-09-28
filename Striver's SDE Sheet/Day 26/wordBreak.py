@@ -29,11 +29,6 @@ class Solution:
         #basecase - if we reached end of string(eos) wkt we found a match, so ret True
         dp[eos] = True
         
-        '''
-        TC - O(N^2 * M) 
-        (N(LEN(s))*M(LEN(dict)) * N(CHECKING IF WORD IN DICT LIES IN STR)
-        SC - O(N)
-        '''
         #bottom up (tabulation) 
         for chidx in range(len(s)-1,-1,-1):
             for word in wordDict:
