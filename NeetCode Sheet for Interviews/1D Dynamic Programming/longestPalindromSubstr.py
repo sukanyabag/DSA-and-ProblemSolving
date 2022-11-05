@@ -46,7 +46,7 @@ def longestPalindrome(self, s):
       
 #TWO POINTER APPROACH -----DO THIS------
 # TC - O(N^2)
-# SC - O(N)
+# SC - O(1)
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
