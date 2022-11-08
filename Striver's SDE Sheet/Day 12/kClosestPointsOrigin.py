@@ -32,6 +32,8 @@ class Solution:
       
       
 #BETTER - MIN HEAP
+# TC - O(K LOG N)
+# SC - O(K)
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         pts = []
