@@ -9,7 +9,7 @@ Space O(N)
 '''
 
     def removeDuplicates(self, s, k):
-        stack = [['#', 0]]
+        stack = [['$', 0]]
         for char in s:
             if stack[-1][0] == char:
                 stack[-1][1] += 1
