@@ -6,6 +6,7 @@ use a dummy element ('$', 0) to avoid empty stack.
 
 Time O(N) for one pass
 Space O(N)
+
 '''
 
     def removeDuplicates(self, s, k):
