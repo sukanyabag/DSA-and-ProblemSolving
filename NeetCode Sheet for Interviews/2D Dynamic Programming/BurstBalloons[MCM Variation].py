@@ -20,6 +20,10 @@ n == nums.length
 0 <= nums[i] <= 100
 '''
 #MEMOIZATION, TC - O(N^3), SC - O(N^2) + AUXX STACK SPACE
+
+from functools import cache
+
+
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
         nums = [1] + nums + [1]
