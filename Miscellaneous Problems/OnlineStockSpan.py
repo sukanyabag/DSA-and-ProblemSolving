@@ -32,7 +32,7 @@ At most 104 calls will be made to next.
 '''
 
 '''
-SOLUTION - MONOTONIC STACK (solution explanation oin description)
+SOLUTION - MONOTONIC STACK 
 
 Time complexity of each call to next: O(1)
 
